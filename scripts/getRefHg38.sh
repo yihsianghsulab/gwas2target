@@ -24,4 +24,13 @@ echo "Converting to PLINK binary format..."
       
 echo "Plink binary conversion finish"
 
+
 rm pops/data/all_hg38.pgen pops/data/all_hg38.pvar pops/data/all_hg38.pgen.zst pops/data/all_hg38.pvar.zst pops/data/all_hg38.psam
+
+
+echo "Calculating allele frequencies..."
+./pops/plink2 --bfile pops/data/all_hg38 \
+         --freq \
+         --out pops/data/all_hg38_freq
+
+echo "All hg38 file preparation done"
